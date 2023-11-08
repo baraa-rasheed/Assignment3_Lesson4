@@ -29,7 +29,7 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign in to your account"
+            android:text="Create your account"
             android:textAlignment="center"
             android:textSize="25sp" />
 
@@ -37,10 +37,51 @@
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="First Name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/firstName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="First Name" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Last Name" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout44"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordInput44"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="LastName" />
+        </com.google.android.material.textfield.TextInputLayout>
+
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:text="Email address (required)" />
 
         <com.google.android.material.textfield.TextInputLayout
@@ -48,6 +89,7 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="email address" />
@@ -61,60 +103,31 @@
             android:text="Password (required)" />
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/forgetpassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:autoLink="all"
-            android:clickable="true"
-            android:text="Forget Password?"
-            android:textAlignment="viewEnd" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="70dp" />
+            android:layout_height="40dp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/signInButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="#047EDF"
-            android:text="Sign in"
+            android:text="Create Account"
             app:cornerRadius="5dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
 
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Don't have an account?"
-            android:textAlignment="center" />
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#FFFFFF"
-            android:foregroundTint="#AE2626"
-            android:foregroundTintMode="add"
-            android:text="Create New Account"
-            android:textColor="#2196F3"
-            app:cornerRadius="5dp"
-            app:strokeColor="#7E7B7B"
-            app:strokeWidth="1dp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

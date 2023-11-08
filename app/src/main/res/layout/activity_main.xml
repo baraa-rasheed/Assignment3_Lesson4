@@ -3,76 +3,121 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#FFFFFF"
-        android:backgroundTint="#101010"
+        android:layout_width="409dp"
+        android:layout_height="729dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="1dp"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TableLayout
-            android:id="@+id/tableLayout"
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="100dp"
+            app:srcCompat="@drawable/walmart_logo" />
 
-            <TableRow>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign in to your account"
+            android:textAlignment="center"
+            android:textSize="25sp" />
 
-                <EditText
-                    android:id="@+id/androidVersionEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Android Version"
-                    android:inputType="text"
-                    android:textSize="18sp" />
-            </TableRow>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
 
-            <TableRow>
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email address (required)" />
 
-                <EditText
-                    android:id="@+id/codeNameEditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Code Name"
-                    android:inputType="text"
-                    android:textSize="18sp" />
-            </TableRow>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <TableRow
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/usernameInput"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:hint="email address" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <Button
-                    android:id="@+id/addButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ADD" />
-            </TableRow>
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Password (required)" />
 
-            <TableRow>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/inputlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Code Name"
-                    android:textSize="18sp" />
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/passwordInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Android Version"
-                    android:textSize="18sp" />
-            </TableRow>
+        <TextView
+            android:id="@+id/forgetpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:autoLink="all"
+            android:clickable="true"
+            android:text="Forget Password?"
+            android:textAlignment="viewEnd" />
 
-            <TableRow android:background="#9C27B0">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="70dp" />
 
-            </TableRow>
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#047EDF"
+            android:text="Sign in"
+            app:cornerRadius="5dp" />
 
-        </TableLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Don't have an account?"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/signUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
+            android:foregroundTint="#AE2626"
+            android:foregroundTintMode="add"
+            android:text="Create New Account"
+            android:textColor="#2196F3"
+            app:cornerRadius="5dp"
+            app:strokeColor="#7E7B7B"
+            app:strokeWidth="1dp" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

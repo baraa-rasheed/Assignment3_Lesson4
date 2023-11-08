@@ -1,52 +1,53 @@
 package com.example.assignment3_lesston4
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TableLayout
-import android.widget.TableRow
-import android.widget.TextView
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var androidVersionEditText: EditText
-    private lateinit var codeNameEditText: EditText
-    private lateinit var tableLayout: TableLayout
-    private lateinit var addButton: Button
-
+    @SuppressLint("MissingInflatedId")
     override
     fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        androidVersionEditText = findViewById(R.id.androidVersionEditText)
-        codeNameEditText = findViewById(R.id.codeNameEditText)
-        tableLayout = findViewById(R.id.tableLayout)
-        addButton = findViewById(R.id.addButton)
+        val users: ArrayList<User> = arrayListOf(
+            User("John", "Doe", "johndoe@example.com", "password123"),
+            User("Jane", "Smith", "janesmith@example.com", "password123"),
+            User("Peter", "Jones", "peterjones@example.com", "password123"),
+            User("Mary", "Brown", "marybrown@example.com", "password123"),
+            User("David", "Williams", "davidwilliams@example.com", "password123")
+        )
 
-        addButton.setOnClickListener {
-            val androidVersion = androidVersionEditText.text.toString()
-            val codeName = codeNameEditText.text.toString()
+        val usernameInput = findViewById<EditText>(R.id.usernameInput)
+        val passwordInput = findViewById<EditText>(R.id.passwordInput)
+        val signInButton = findViewById<Button>(R.id.signInButton)
+        val signUpButton = findViewById<Button>(R.id.signUpButton)
 
-            if (androidVersion.isNotEmpty() && codeName.isNotEmpty()) {
-                val tableRow = TableRow(this)
 
-                val textView = TextView(this)
-                textView.text = androidVersion
-                textView.textSize = 18F
+        signUpButton.setOnClickListener {
+            val intent = Intent(this, SignupActivity::class.java)
+            startActivity(intent)
+        }
 
-                val textView2 = TextView(this)
-                textView2.text = codeName
-                textView2.textSize = 18F
+        signInButton.setOnClickListener {
+            val username = usernameInput.text.toString()
+            val password = passwordInput.text.toString()
 
-                tableRow.addView(textView)
-                tableRow.addView(textView2)
+            val foundUser = users.find { it.username == username && it.password == password }
 
-                tableLayout.addView(tableRow)
-
-                androidVersionEditText.text = null
-                codeNameEditText.text = null
+            if (foundUser != null) {
+                val intent = Intent(this, ShoppingCategoryActivity::class.java)
+                intent.putExtra("username", username)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "Invalid username or password", Toast.LENGTH_SHORT).show()
             }
         }
     }
